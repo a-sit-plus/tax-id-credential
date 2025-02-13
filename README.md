@@ -12,82 +12,18 @@
 
 </div>
 
-Data representing tax credentials as a ISO 18013-5 Credential asn SD-JWT, with the help
+Data representing tax credentials as SD-JWT, with the help
 of [VC-K](https://github.com/a-sit-plus/vck).
 
 Be sure to call `at.asitplus.wallet.taxid.Initializer.initWithVCK` first thing in your application.
 
 These attributes are implemented:
 
-- `family_name`
-- `given_name`
-- `birth_date`
-- `issue_date`
-- `expiry_date`
-- `issuing_country`
-- `issuing_authority`
-- `document_number`
-- `portrait`
-- `driving_privileges`
-- `un_distinguishing_sign`
-- `administrative_number`
-- `sex`
-- `height`
-- `weight`
-- `eye_colour`
-- `hair_colour`
-- `birth_place`
-- `resident_address`
-- `portrait_capture_date`
-- `age_in_years`
-- `age_birth_year`
-- `age_over_12`
-- `age_over_14`
-- `age_over_16`
-- `age_over_18`
-- `age_over_21`
-- `issuing_jurisdiction`
-- `nationality`
-- `resident_city`
-- `resident_state`
-- `resident_postal_code`
-- `resident_country`
-- `family_name_national_character`
-- `given_name_national_character`
-- `signature_usual_mark`
 
 ## Changelog
 
-Release 1.1.4:
-- Add additional claims: `age_over_12`, `age_over_14`, `age_over_16`, `age_over_21`
-
-Release 1.1.3:
-- VC-K 5.2.2
-
-Release 1.1.2:
-- VC-K 5.2.1
-- Kotlin 2.1.0
-
-Release 1.1.1:
-- Fix serialization of boolean element `age_over_18`
-
-Release 1.1.0:
-- Proper deserialization handling
-- Update to VC-K 5.0.0
-
-Release 1.0.3:
-- Rename `Initializer.initWithVck` to `Initializer.initWithVCK`
-
-Release 1.0.2:
-- Update to VC-K 4.1.0
-
-Release 1.0.1:
-
-- Update to `vclib` 4.0.0
-
 Release 1.0.0:
-
-- Initial release, imported from vclib 3.7.0
+- Initial Release
 
 
 
