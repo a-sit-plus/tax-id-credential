@@ -4,13 +4,8 @@ import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.serializers.InstantIso8601Serializer
 import kotlinx.datetime.serializers.LocalDateIso8601Serializer
-import kotlinx.serialization.KSerializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlinx.serialization.descriptors.PrimitiveKind
-import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
-import kotlinx.serialization.encoding.Decoder
-import kotlinx.serialization.encoding.Encoder
 
 @Serializable
 data class TaxIdCredential private constructor(
@@ -220,7 +215,8 @@ data class TaxIdCredential private constructor(
 
         /**
          * Date and time when the Tax ID
-         * attestation was issued
+         * attestation was issued.
+         * **fractions of seconds are cut off!**
          */
         issuanceDate: Instant,
 
@@ -234,6 +230,7 @@ data class TaxIdCredential private constructor(
         /**
          * Date and time when the Tax ID
          * attestation will expire.
+         * **fractions of seconds are cut off!**
          */
         expiryDate: Instant,
 
@@ -299,7 +296,7 @@ data class TaxIdCredential private constructor(
         administrativeNumber = administrativeNumber,
         issuingCountry = issuingCountry,
         issuingJurisdiction = issuingJurisdiction,
-        )
+    )
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true

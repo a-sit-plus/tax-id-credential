@@ -19,6 +19,24 @@ Be sure to call `at.asitplus.wallet.taxid.Initializer.initWithVCK` first thing i
 
 These attributes are implemented:
 
+* tax_number
+* affiliation_country
+* registered_family_name
+* registered_given_name
+* resident_address
+* birth_date
+* church_tax_ID
+* iban
+* pid_id
+* issuance_date
+* verification_status
+* expiry_date
+* issuing_authority
+* document_number
+* administrative_number
+* issuing_country
+* issuing_jurisdiction
+
 
 ## Changelog
 
