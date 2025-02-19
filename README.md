@@ -40,6 +40,9 @@ These attributes are implemented:
 
 ## Changelog
 
+Release 1.0.1
+- Add `ALL_ELEMENTS` and `optionalClaims` to Attributes
+
 Release 1.0.0:
 - Initial Release
 
