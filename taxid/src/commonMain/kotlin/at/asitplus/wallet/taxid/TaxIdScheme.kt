@@ -5,7 +5,8 @@ import at.asitplus.wallet.lib.data.ConstantIndex
 object TaxIdScheme : ConstantIndex.CredentialScheme {
     override val schemaUri = "https://wallet.a-sit.at/schemas/1.0.0/taxid.json"
     override val sdJwtType = "Tax Number" //Yes, it is like that in the rulebook
-    override val supportedRepresentations: Collection<ConstantIndex.CredentialRepresentation> = listOf(ConstantIndex.CredentialRepresentation.SD_JWT)
+    override val supportedRepresentations: Collection<ConstantIndex.CredentialRepresentation> =
+        listOf(ConstantIndex.CredentialRepresentation.SD_JWT)
 
     object Attributes {
         /**
@@ -142,4 +143,26 @@ object TaxIdScheme : ConstantIndex.CredentialScheme {
         Attributes.ISSUING_AUTHORITY,
         Attributes.ISSUING_COUNTRY,
     )
+
+    val ALL_ELEMENTS: Collection<String> = setOf(
+        Attributes.TAX_NUMBER,
+        Attributes.AFFILIATION_COUNTRY,
+        Attributes.REGISTERED_FAMILY_NAME,
+        Attributes.REGISTERED_GIVEN_NAME,
+        Attributes.RESIDENT_ADDRESS,
+        Attributes.BIRTH_DATE,
+        Attributes.CHURCH_TAX_ID,
+        Attributes.IBAN,
+        Attributes.PID_ID,
+        Attributes.ISSUANCE_DATE,
+        Attributes.VERIFICATION_STATUS,
+        Attributes.EXPIRY_DATE,
+        Attributes.ISSUING_AUTHORITY,
+        Attributes.DOCUMENT_NUMBER,
+        Attributes.ADMINISTRATIVE_NUMBER,
+        Attributes.ISSUING_COUNTRY,
+        Attributes.ISSUING_JURISDICTION,
+    )
+
+    val optionalClaims = ALL_ELEMENTS - requiredClaims
 }
