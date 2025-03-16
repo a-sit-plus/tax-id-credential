@@ -7,7 +7,7 @@ object TaxIdScheme : ConstantIndex.CredentialScheme {
     override val sdJwtType = "Tax Number" //Yes, it is like that in the rulebook
     override val supportedRepresentations: Collection<ConstantIndex.CredentialRepresentation> =
         listOf(ConstantIndex.CredentialRepresentation.SD_JWT)
-
+    
     object Attributes {
         /**
          * Character string that enables the
@@ -165,4 +165,6 @@ object TaxIdScheme : ConstantIndex.CredentialScheme {
     )
 
     val optionalClaims = ALL_ELEMENTS - requiredClaims
+
+    override val claimNames: Collection<String> = ALL_ELEMENTS
 }
