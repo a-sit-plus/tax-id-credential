@@ -15,32 +15,35 @@
 Data representing tax credentials as SD-JWT, with the help
 of [VC-K](https://github.com/a-sit-plus/vck).
 
-Be sure to call `at.asitplus.wallet.taxid.Initializer.initWithVCK` first thing in your application.
+Be sure to call `at.asitplus.wallet.taxid.Initializer.initWithVCK()` first thing in your application.
 
 These attributes are implemented:
 
-* tax_number
-* affiliation_country
-* registered_family_name
-* registered_given_name
-* resident_address
-* birth_date
-* church_tax_ID
-* iban
-* pid_id
-* issuance_date
-* verification_status
-* expiry_date
-* issuing_authority
-* document_number
-* administrative_number
-* issuing_country
-* issuing_jurisdiction
+* `tax_number`
+* `affiliation_country`
+* `registered_family_name`
+* `registered_given_name`
+* `resident_address`
+* `birth_date`
+* `church_tax_ID`
+* `iban`
+* `pid_id`
+* `issuance_date`
+* `verification_status`
+* `expiry_date`
+* `issuing_authority`
+* `document_number`
+* `administrative_number`
+* `issuing_country`
+* `issuing_jurisdiction`
 
 
 ## Changelog
 
-Release 1.0.1
+Release 1.0.2:
+- Fill `claimNames` of `TaxIdScheme`
+
+Release 1.0.1:
 - Add `ALL_ELEMENTS` and `optionalClaims` to Attributes
 
 Release 1.0.0:
