@@ -11,8 +11,7 @@ import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import kotlinx.serialization.modules.subclass
 
-@Deprecated("Use Initializer2025 instead", ReplaceWith("Initializer2025", "at.asitplus.wallet.taxid.Initializer2025"))
-object Initializer {
+object Initializer2025 {
     /**
      * A reference to this class is enough to trigger the init block
      */

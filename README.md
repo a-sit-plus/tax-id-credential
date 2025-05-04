@@ -15,7 +15,7 @@
 Data representing tax credentials as SD-JWT, with the help
 of [VC-K](https://github.com/a-sit-plus/vck).
 
-Be sure to call `at.asitplus.wallet.taxid.Initializer.initWithVCK()` first thing in your application.
+Be sure to call `at.asitplus.wallet.taxid.Initializer2025.initWithVCK()` first thing in your application.
 
 These attributes are implemented:
 
@@ -39,6 +39,10 @@ These attributes are implemented:
 
 
 ## Changelog
+
+Release 1.1.0:
+- Introduce `TaxId2025Scheme` with `vct` set to `urn:eu.europa.ec.eudi:tax:1`
+- `TaxIdScheme` keeps the value `Tax Number` for `vct`
 
 Release 1.0.2:
 - Fill `claimNames` of `TaxIdScheme`

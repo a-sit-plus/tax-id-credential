@@ -5,5 +5,6 @@ import io.kotest.core.config.AbstractProjectConfig
 class KotestConfig : AbstractProjectConfig() {
     init {
         Initializer.initWithVCK()
+        Initializer2025.initWithVCK()
     }
 }
