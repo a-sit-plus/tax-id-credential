@@ -25,12 +25,12 @@ object Initializer2025 {
      */
     fun initWithVCK() {
         LibraryInitializer.registerExtensionLibrary(
-            credentialScheme = TaxIdScheme,
+            credentialScheme = TaxId2025Scheme,
             jsonValueEncoder = jsonValueEncoder(),
             itemValueSerializerMap = mapOf(
-                TaxIdScheme.Attributes.BIRTH_DATE to LocalDate.serializer(),
-                TaxIdScheme.Attributes.EXPIRY_DATE to Instant.serializer(),
-                TaxIdScheme.Attributes.ISSUANCE_DATE to Instant.serializer(),
+                TaxId2025Scheme.Attributes.BIRTH_DATE to LocalDate.serializer(),
+                TaxId2025Scheme.Attributes.EXPIRY_DATE to Instant.serializer(),
+                TaxId2025Scheme.Attributes.ISSUANCE_DATE to Instant.serializer(),
             )
         )
     }

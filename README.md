@@ -40,8 +40,8 @@ These attributes are implemented:
 
 ## Changelog
 
-Release 1.1.0:
-- Introduce `TaxId2025Scheme` with `vct` set to `urn:eu.europa.ec.eudi:tax:1`
+Release 1.1.1:
+- Introduce `TaxId2025Scheme` with `vct` set to `urn:eu.europa.ec.eudi:tax:1`, use `Initializer2025`
 - `TaxIdScheme` keeps the value `Tax Number` for `vct`
 
 Release 1.0.2:
