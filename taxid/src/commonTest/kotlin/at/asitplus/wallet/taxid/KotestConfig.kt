@@ -1,8 +1,12 @@
-package at.asitplus.wallet.taxid
+package io.kotest.provided
 
-import io.kotest.core.config.AbstractProjectConfig
+import at.asitplus.test.XmlReportingProjectConfig
+import at.asitplus.wallet.taxid.Initializer
+import at.asitplus.wallet.taxid.Initializer2025
 
-class KotestConfig : AbstractProjectConfig() {
+
+/** Wires KMP JUnit XML reporting */
+class ProjectConfig : XmlReportingProjectConfig() {
     init {
         Initializer.initWithVCK()
         Initializer2025.initWithVCK()

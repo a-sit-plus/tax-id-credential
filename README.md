@@ -40,6 +40,11 @@ These attributes are implemented:
 
 ## Changelog
 
+Release 1.1.2:
+- VC-K 5.8.0
+- Kotlin 2.2.0
+- kotlinx-datetime 0.7.1
+
 Release 1.1.1:
 - Introduce `TaxId2025Scheme` with `vct` set to `urn:eu.europa.ec.eudi:tax:1`, use `Initializer2025`
 - `TaxIdScheme` keeps the value `Tax Number` for `vct`
