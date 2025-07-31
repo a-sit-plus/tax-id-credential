@@ -1,8 +1,7 @@
 package at.asitplus.wallet.taxid
 
-import kotlinx.datetime.Instant
+import kotlin.time.Instant
 import kotlinx.datetime.LocalDate
-import kotlinx.datetime.serializers.InstantIso8601Serializer
 import kotlinx.datetime.serializers.LocalDateIso8601Serializer
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -15,7 +14,6 @@ data class TaxIdCredential private constructor(
      * Date and time when the Tax ID
      * attestation was issued
      */
-    @Serializable(with = InstantIso8601Serializer::class)
     @SerialName(TaxIdScheme.Attributes.ISSUANCE_DATE)
     val issuanceDate: Instant,
 
@@ -99,7 +97,6 @@ data class TaxIdCredential private constructor(
      * Date and time when the Tax ID
      * attestation will expire.
      */
-    @Serializable(with = InstantIso8601Serializer::class)
     @SerialName(TaxIdScheme.Attributes.EXPIRY_DATE)
     val expiryDate: Instant,
 

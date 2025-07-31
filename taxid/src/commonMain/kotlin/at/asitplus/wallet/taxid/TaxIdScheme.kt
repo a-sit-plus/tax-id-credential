@@ -2,10 +2,9 @@ package at.asitplus.wallet.taxid
 
 import at.asitplus.wallet.lib.data.ConstantIndex
 
-@Deprecated("Use TaxId2025Scheme instead", ReplaceWith("TaxId2025Scheme", "at.asitplus.wallet.taxid.TaxId2025Scheme"))
 object TaxIdScheme : ConstantIndex.CredentialScheme {
-    override val schemaUri = "https://wallet.a-sit.at/schemas/1.0.0/taxid.json"
-    override val sdJwtType = "Tax Number" //Yes, it is like that in the rulebook
+    override val schemaUri = "https://wallet.a-sit.at/schemas/1.1.0/taxid.json"
+    override val sdJwtType = "urn:eu.europa.ec.eudi:tax:1"
     override val supportedRepresentations: Collection<ConstantIndex.CredentialRepresentation> =
         listOf(ConstantIndex.CredentialRepresentation.SD_JWT)
 
