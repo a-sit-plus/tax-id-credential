@@ -1,7 +1,7 @@
 package at.asitplus.wallet.taxid
 
 import at.asitplus.wallet.lib.data.vckJsonSerializer
-import io.kotest.core.spec.style.FreeSpec
+import de.infix.testBalloon.framework.core.testSuite
 import io.kotest.matchers.shouldBe
 import io.matthewnelson.encoding.base64.Base64
 import io.matthewnelson.encoding.core.Encoder.Companion.encodeToString
@@ -11,59 +11,54 @@ import kotlinx.serialization.encodeToString
 import kotlin.random.Random
 
 
-class SerializerTest : FreeSpec({
+val SerializerTest by testSuite {
 
-    "Serialization and deserialization" - {
-
-        "mandatory fields" {
-            repeat(100) {
-
-                val cred = TaxIdCredential(
-                    taxNumber = randomString(),
-                    affiliationCountry = randomString(),
-                    registeredFamilyName = randomString(),
-                    registeredGivenName = randomString(),
-                    residentAddress = randomString(),
-                    birthDate = randomLocalDate(),
-                    issuanceDate = randomInstant(),
-                    expiryDate = randomInstant(),
-                    issuingAuthority = randomString(),
-                    issuingCountry = randomString(),
-                )
-                val serialized = vckJsonSerializer.encodeToString(cred)
-                val parsed: TaxIdCredential = vckJsonSerializer.decodeFromString(serialized)
-                parsed shouldBe cred
-            }
-        }
-        "all fields" {
-            repeat(100) {
-
-                val cred = TaxIdCredential(
-                    taxNumber = randomString(),
-                    affiliationCountry = randomString(),
-                    registeredFamilyName = randomString(),
-                    registeredGivenName = randomString(),
-                    residentAddress = randomString(),
-                    birthDate = randomLocalDate(),
-                    issuanceDate = randomInstant(),
-                    expiryDate = randomInstant(),
-                    issuingAuthority = randomString(),
-                    issuingCountry = randomString(),
-                    churchTaxId = randomString(),
-                    iban = randomString(),
-                    pidId = randomString(),
-                    verificationStatus = randomString(),
-                    documentNumber = randomString(),
-                    administrativeNumber = randomString(),
-                    issuingJurisdiction = randomString(),
-                )
-                val serialized = vckJsonSerializer.encodeToString(cred)
-                val parsed: TaxIdCredential = vckJsonSerializer.decodeFromString(serialized)
-                parsed shouldBe cred
-            }
+    test("mandatory fields") {
+        repeat(100) {
+         val cred = TaxIdCredential(
+                taxNumber = randomString(),
+                affiliationCountry = randomString(),
+                registeredFamilyName = randomString(),
+                registeredGivenName = randomString(),
+                residentAddress = randomString(),
+                birthDate = randomLocalDate(),
+                issuanceDate = randomInstant(),
+                expiryDate = randomInstant(),
+                issuingAuthority = randomString(),
+                issuingCountry = randomString(),
+            )
+            val serialized = vckJsonSerializer.encodeToString(cred)
+            val parsed: TaxIdCredential = vckJsonSerializer.decodeFromString(serialized)
+            parsed shouldBe cred
         }
     }
-})
+    test("all fields") {
+        repeat(100) {
+            val cred = TaxIdCredential(
+                taxNumber = randomString(),
+                affiliationCountry = randomString(),
+                registeredFamilyName = randomString(),
+                registeredGivenName = randomString(),
+                residentAddress = randomString(),
+                birthDate = randomLocalDate(),
+                issuanceDate = randomInstant(),
+                expiryDate = randomInstant(),
+                issuingAuthority = randomString(),
+                issuingCountry = randomString(),
+                churchTaxId = randomString(),
+                iban = randomString(),
+                pidId = randomString(),
+                verificationStatus = randomString(),
+                documentNumber = randomString(),
+                administrativeNumber = randomString(),
+                issuingJurisdiction = randomString(),
+            )
+            val serialized = vckJsonSerializer.encodeToString(cred)
+            val parsed: TaxIdCredential = vckJsonSerializer.decodeFromString(serialized)
+            parsed shouldBe cred
+        }
+    }
+}
 
 private fun randomString() = Random.nextBytes(16).encodeToString(Base64())
 
